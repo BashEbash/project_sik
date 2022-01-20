@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Add music {% endblock %}
+
+{% block script %}
+<script>
+function uploadFile(target) {
+    document.getElementById("file-name").innerHTML = target.files[0].name;
+    document.getElementsByClassName("file-button").style.pointerEvents = 'none';
+}
+
+
+</script>
+{% endblock %}
+
+
+
+{% block content %}
+<div class ="container">
+<div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+<h1 class="display-4 text-center">Load now your own music!</h1>
+<form class="text-center" type="form" method="POST" enctype="application/json" id="form" action="http://localhost:5000/tracks">
+    <div class="form-group">
+        <div class="custom-file">
+            <label for="exampleFormControlInput1">Music name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="" placeholder="music name">
+            <label for="file" class="file-label">Load the music: </label> <br> <br>
+            <input type="file" id="file" class="form-control-file border border-primary border-3 rounded" onchange='uploadFile(this)' name="file" accept=".jpg, .jpeg, .png, .bmp">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="file" id="load-button" class="btn btn-primary">Load music!</button>
+    </div>
+</form>
+            <p class="lead mb-0 text-right">UAM, Computer networks, 2021/22</p>
+                    </div>
+        </div>
+</div>
+{% endblock %}
