@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-
+#tworzymy baze danych z utworami
 class TrackModel(db.Model):
     __tablename__ = 'tracks'
 
